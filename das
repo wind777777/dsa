@@ -147,7 +147,7 @@ function library:New(name)
 
 	Menu.Name = "Menu"      
 	Menu.Parent = Uwu      
-	Menu.BackgroundColor3 = COL3RGB(0,0,0)      
+	Menu.BackgroundColor3 = COL3RGB(15,15,15)      
 	Menu.Position = UDIM2(0.5, -300, 0.5, -300)      
 	Menu.Size = UDIM2(0, 600, 0, 800)      
 	Menu.Image = "rbxassetid://8062345037"      
@@ -174,7 +174,7 @@ function library:New(name)
 
 		TextLabel.Parent = KeybindList 
 		TextLabel.BackgroundColor3 = COL3RGB(0, 0, 0) 
-		TextLabel.BorderColor3 = COL3RGB(255, 0, 0) 
+		TextLabel.BorderColor3 = COL3RGB(0, 0, 0) 
 		TextLabel.Position = UDIM2(0, 1, 0.300000012, 0) 
 		TextLabel.Size = UDIM2(0, 155, 0, 24) 
 		TextLabel.ZIndex = 2 
@@ -199,7 +199,7 @@ function library:New(name)
 	function keybindadd(text) 
 		if not KeybindList.TextLabel.Frame:FindFirstChild(text) then 
 			local TextLabel = INST("TextLabel") 
-			TextLabel.BackgroundColor3 = COL3RGB(0, 0, 0) 
+			TextLabel.BackgroundColor3 = COL3RGB(1, 1, 1) 
 			TextLabel.BorderColor3 = COL3RGB(0, 0, 0) 
 			TextLabel.BorderSizePixel = 0 
 			TextLabel.Size = UDIM2(0, 155, 0, 24) 
@@ -5023,7 +5023,8 @@ coroutine.wrap(function()
 end)()       
 Peek = false
 local exploits = rage:Sector("exploits", "Left")      
-exploits:Element("ToggleKeybind", "triple tap")      
+exploits:Element("ToggleKeybind", "triple tap")
+exploits:Element("ToggleKeybind", "double tap")      
 exploits:Element("ToggleKeybind", "kill all")     
 exploits:Element("Slider", "quick peek vertical pos", {min = -500, max = 500, default = 200})  
 exploits:Element("ToggleKeybind", "quick peek",{},function(tbl)
@@ -5303,16 +5304,6 @@ effects:Element("ToggleColor", "Ambient", {default = {Color = COL3RGB(255,255,25
 		game.Lighting.ColorShift_Top = Color3.fromRGB(255, 255, 255)
 	end
 end)   
-
-local zuhnmode = Instance.new("ColorCorrectionEffect", workspace.CurrentCamera)
-				client:Element("Toggle", "Boost Saturation", {}, function(tbl)
-					if tbl.Toggle then
-						zuhnmode.Saturation = 1.4
-				else
-				zuhnmode.Saturation = 0
-				end
-				end)
-
 effects:Element("Toggle", "shadowmap technology", nil, function(val) sethiddenproperty(Lighting, "Technology", val.Toggle and "ShadowMap" or "Legacy") end)      
 
 local self = visuals:Sector("self", "Right")      
@@ -5569,217 +5560,7 @@ client:Element("Toggle", "buy any grenade")
 client:Element("Toggle", "chat alive")      
 client:Element("Jumbobox", "shop", {options = {"inf time", "anywhere"}})      
 client:Element("Toggle", "anti spectate")   
-client:Element("Toggle", "upside down spectate")      
-
-				
-				client:Element("Toggle", "keystrokes", {}, function(tbl)
-					if tbl.Toggle then
-							local ScreenGuiKey = Instance.new("ScreenGui")
-				local W = Instance.new("TextLabel")
-				local A = Instance.new("TextLabel")
-				local S = Instance.new("TextLabel")
-				local D = Instance.new("TextLabel")
-				local E = Instance.new("TextLabel")
-				local R = Instance.new("TextLabel")
-				local _ = Instance.new("TextLabel")
-				local _2 = Instance.new("TextLabel")
-				local _3 = Instance.new("TextLabel")
-				local _4 = Instance.new("TextLabel")
-				local _5 = Instance.new("TextLabel")
-				local _6 = Instance.new("TextLabel")
-
-
-				ScreenGuiKey.Parent = game.CoreGui
-				ScreenGuiKey.Name = "keystrokess"
-
-				W.Name = "W"
-				W.Parent = ScreenGuiKey
-				W.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				W.BackgroundTransparency = 1.000
-				W.Position = UDim2.new(0.488053292, 0, 0.728395104, 0)
-				W.Size = UDim2.new(0, 29, 0, 28)
-				W.Visible = false
-				W.Font = Enum.Font.Code
-				W.Text = "W"
-				W.TextColor3 = Color3.fromRGB(255, 255, 255)
-				W.TextSize = 14.000
-				W.TextStrokeTransparency = 0.000
-				
-				_.Name = "_"
-				_.Parent = ScreenGuiKey
-				_.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				_.BackgroundTransparency = 1.000
-				_.Position = UDim2.new(0.488053292, 0, 0.728395104, 0)
-				_.Size = UDim2.new(0, 29, 0, 28)
-				_.Visible = true
-				_.Font = Enum.Font.Code
-				_.Text = "_"
-				_.TextColor3 = Color3.fromRGB(255, 255, 255)
-				_.TextSize = 14.000
-				_.TextStrokeTransparency = 0.000
-
-				A.Name = "A"
-				A.Parent = ScreenGuiKey
-				A.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				A.BackgroundTransparency = 1.000
-				A.Position = UDim2.new(0.453584045, 0, 0.777777791, 0)
-				A.Size = UDim2.new(0, 29, 0, 28)
-				A.Visible = false
-				A.Font = Enum.Font.Code
-				A.Text = "A"
-				A.TextColor3 = Color3.fromRGB(255, 255, 255)
-				A.TextSize = 14.000
-				A.TextStrokeTransparency = 0.000
-				
-				_2.Name = "_2"
-				_2.Parent = ScreenGuiKey
-				_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				_2.BackgroundTransparency = 1.000
-				_2.Position = UDim2.new(0.453584045, 0, 0.777777791, 0)
-				_2.Size = UDim2.new(0, 29, 0, 28)
-				_2.Visible = true
-				_2.Font = Enum.Font.Code
-				_2.Text = "_"
-				_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-				_2.TextSize = 14.000
-				_2.TextStrokeTransparency = 0.000
-
-				S.Name = "S"
-				S.Parent = ScreenGuiKey
-				S.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				S.BackgroundTransparency = 1.000
-				S.Position = UDim2.new(0.488053292, 0, 0.777777791, 0)
-				S.Size = UDim2.new(0, 29, 0, 28)
-				S.Visible = false
-				S.Font = Enum.Font.Code
-				S.Text = "S"
-				S.TextColor3 = Color3.fromRGB(255, 255, 255)
-				S.TextSize = 14.000
-				S.TextStrokeTransparency = 0.000
-				
-				_3.Name = "_3"
-				_3.Parent = ScreenGuiKey
-				_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				_3.BackgroundTransparency = 1.000
-				_3.Position = UDim2.new(0.488053292, 0, 0.777777791, 0)
-				_3.Size = UDim2.new(0, 29, 0, 28)
-				_3.Visible = true
-				_3.Font = Enum.Font.Code
-				_3.Text = "_"
-				_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-				_3.TextSize = 14.000
-				_3.TextStrokeTransparency = 0.000
-
-				D.Name = "D"
-				D.Parent = ScreenGuiKey
-				D.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				D.BackgroundTransparency = 1.000
-				D.Position = UDim2.new(0.522522688, 0, 0.777777791, 0)
-				D.Size = UDim2.new(0, 29, 0, 28)
-				D.Visible = false
-				D.Font = Enum.Font.Code
-				D.Text = "D"
-				D.TextColor3 = Color3.fromRGB(255, 255, 255)
-				D.TextSize = 14.000
-				D.TextStrokeTransparency = 0.000
-				
-				_4.Name = "_4"
-				_4.Parent = ScreenGuiKey
-				_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				_4.BackgroundTransparency = 1.000
-				_4.Position = UDim2.new(0.522522688, 0, 0.777777791, 0)
-				_4.Size = UDim2.new(0, 29, 0, 28)
-				_4.Visible = true
-				_4.Font = Enum.Font.Code
-				_4.Text = "_"
-				_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-				_4.TextSize = 14.000
-				_4.TextStrokeTransparency = 0.000
-
-				E.Name = "E"
-				E.Parent = ScreenGuiKey
-				E.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				E.BackgroundTransparency = 1.000
-				E.Position = UDim2.new(0.453584045, 0, 0.728395045, 0)
-				E.Size = UDim2.new(0, 29, 0, 28)
-				E.Visible = false
-				E.Font = Enum.Font.Code
-				E.Text = "C"
-				E.TextColor3 = Color3.fromRGB(255, 255, 255)
-				E.TextSize = 14.000
-				E.TextStrokeTransparency = 0.000
-				
-				_5.Name = "_5"
-				_5.Parent = ScreenGuiKey
-				_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				_5.BackgroundTransparency = 1.000
-				_5.Position = UDim2.new(0.453584045, 0, 0.728395045, 0)
-				_5.Size = UDim2.new(0, 29, 0, 28)
-				_5.Visible = true
-				_5.Font = Enum.Font.Code
-				_5.Text = "_"
-				_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-				_5.TextSize = 14.000
-				_5.TextStrokeTransparency = 0.000
-
-				R.Name = "R"
-				R.Parent = ScreenGuiKey
-				R.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				R.BackgroundTransparency = 1.000
-				R.Position = UDim2.new(0.522522688, 0, 0.728395045, 0)
-				R.Size = UDim2.new(0, 29, 0, 28)
-				R.Visible = false
-				R.Font = Enum.Font.Code
-				R.Text = "J"
-				R.TextColor3 = Color3.fromRGB(255, 255, 255)
-				R.TextSize = 14.000
-				R.TextStrokeTransparency = 0.000
-				
-				_6.Name = "_6"
-				_6.Parent = ScreenGuiKey
-				_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				_6.BackgroundTransparency = 1.000
-				_6.Position = UDim2.new(0.522522688, 0, 0.728395045, 0)
-				_6.Size = UDim2.new(0, 29, 0, 28)
-				_6.Visible = true
-				_6.Font = Enum.Font.Code
-				_6.Text = "_"
-				_6.TextColor3 = Color3.fromRGB(255, 255, 255)
-				_6.TextSize = 14.000
-				_6.TextStrokeTransparency = 0.000
-		
-
-				local UserInputService = game:GetService("UserInputService")
-
-				local W1Key = Enum.KeyCode.W
-				local A1Key = Enum.KeyCode.A
-				local S1Key = Enum.KeyCode.S
-				local D1Key = Enum.KeyCode.D
-				local E1Key = Enum.KeyCode.LeftControl
-				local R1Key = Enum.KeyCode.R
-				local SpaceKey = Enum.KeyCode.Space
-
-				UserInputService.InputBegan:Connect(function(input)
-					if (input.KeyCode == W1Key) then
-						W.Visible = true
-						_.Visible = false
-					elseif (input.KeyCode == A1Key) then
-						A.Visible = true
-						_2.Visible = false
-					elseif (input.KeyCode == S1Key) then
-						S.Visible = true
-						_3.Visible = false
-					elseif (input.KeyCode == D1Key) then
-						D.Visible = true
-						_4.Visible = false
-					elseif (input.KeyCode == E1Key) then
-						E.Visible = true
-						_5.Visible = false
-					elseif (input.KeyCode == SpaceKey) then
-						R.Visible = true
-						_6.Visible = false
-					end
-				end)
+client:Element("Toggle", "upside down spectate")   
 
 local oldgrenadeallowed = Client.grenadeallowed      
 Client.grenadeallowed = function(...)      
@@ -6319,7 +6100,8 @@ RunService.RenderStepped:Connect(function(step)
 			if values.rage.aimbot.enabled.Toggle then      
 				local Origin = values.rage.aimbot.origin.Dropdown == "character" and LocalPlayer.Character.LowerTorso.Position + Vec3(0, 2.5, 0) or CamCFrame.p      
 				local Stats = GetStatsRage(GetWeaponRage(Client.gun.Name))      
-				for _,Player in pairs(Players:GetPlayers()) do      
+				for _,Player in pairs(Players:GetPlayers()) do
+                end      
 					if TBLFIND(values.misc.client["gun modifiers"].Jumbobox, "firerate") then      
 						Client.DISABLED = false      
 					end      
@@ -6464,7 +6246,10 @@ RunService.RenderStepped:Connect(function(step)
 															Client.firebullet()      
 															Client.firebullet()  
 
-														end  
+														end 
+                                                                                                                 if values.rage.exploits["double tap"].Toggle and values.rage.exploits["double tap"].Active then      
+															Client.firebullet()     	 
+														end   
                                                         CreateHitElement("Hit "..EndHit.Parent.Name.." in the "..EndHit.Name,Color3.new(1,1,1)) 
 													elseif values.rage.aimbot["automatic fire"].Dropdown == "hitpart" then      
 														Client.firebullet()      
@@ -6480,7 +6265,24 @@ RunService.RenderStepped:Connect(function(step)
 															[11] = Vec3(),      
 															[12] = 100,      
 															[13] = Vec3()      
-														}      
+														} 
+                                                            game.ReplicatedStorage.Events.HitPart:FireServer(unpack(Arguments))   
+														if values.rage.exploits["double tap"].Toggle and values.rage.exploits["double tap"].Active then      
+															Client.firebullet()      
+															local Arguments = {      
+																[1] = EndHit,      
+																[2] = EndHit.Position,      
+																[3] = LocalPlayer.Character.EquippedTool.Value,      
+																[4] = 100,      
+																[5] = LocalPlayer.Character.Gun,      
+																[8] = 1,      
+																[9] = false,      
+																[10] = false,      
+																[11] = Vec3(),      
+																[12] = 100,      
+																[13] = Vec3()      
+															
+															}           
 														game.ReplicatedStorage.Events.HitPart:FireServer(unpack(Arguments))   
 														if values.rage.exploits["triple tap"].Toggle and values.rage.exploits["triple tap"].Active then      
 															Client.firebullet()      
@@ -8325,4 +8127,4 @@ ChatScript.createNewMessage("Avidity","Build: Private",MainUIColor,Color3.new(1,
 
 ChatScript.moveOldMessages()
 
-ChatScript.createNewMessage("Avidity","Version: 0.1",MainUIColor,Color3.new(1,1,1),0.01,nil)	
+ChatScript.createNewMessage("Avidity","Version: 0.1",MainUIColor,Color3.new(1,1,1),0.01,nil)
