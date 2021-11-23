@@ -10,8 +10,8 @@ underground = false
 local txt = game:GetService("TextService")      
 local TweenService = game:GetService("TweenService")      
 function library:Tween(...) TweenService:Create(...):Play() end      
-local cfglocation = "uwu.cfg/"      
-makefolder("uwu.cfg")      
+local cfglocation = "Avidity.cfg/"      
+makefolder("Avidity.cfg")      
 
 local Vec2 = Vector2.new      
 local Vec3 = Vector3.new      
