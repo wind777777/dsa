@@ -4726,12 +4726,12 @@ for i,v in ipairs(AllWeapons) do
 	end      
 end      
 
-makefolder("uwu.lua")      
+makefolder("Avidity.lua")      
 
 local allluas = {}  
 
-for _,lua in pairs(listfiles("uwu.lua")) do  
-	local luaname = GSUB(lua, "uwu.lua\\", "")  
+for _,lua in pairs(listfiles("Avidity.lua")) do  
+	local luaname = GSUB(lua, "Avidity.lua\\", "")  
 	INSERT(allluas, luaname)  
 end  
 
@@ -4760,7 +4760,7 @@ end
 local luascripts = luas:Sector("lua scripts", "Left")  
 luascripts:Element("Scroll", "lua", {options = allluas, Amount = 5})  
 luascripts:Element("Button", "load", {}, function()  
-	loadstring(readfile("uwu.lua\\"..values.luas["lua scripts"].lua.Scroll))()  
+	loadstring(readfile("Avidity.lua\\"..values.luas["lua scripts"].lua.Scroll))()  
 end)  
 
 luascripts:Element("Button", "Rejoin", nil, function()
