@@ -127,23 +127,23 @@ function library:New(name)
 	but.BackgroundTransparency = 1      
 	but.Parent = Uwu      
 
-	local cursor = INST("ImageLabel")      
-	cursor.Name = "cursor"      
-	cursor.Parent = Uwu      
-	cursor.BackgroundTransparency = 1      
-	cursor.Size = UDIM2(0,17,0,17)      
-	cursor.Image = "rbxassetid://518398610"      
-	cursor.ZIndex = 1000      
-	cursor.ImageColor3 = COL3RGB(255,3,13)      
+	local cursor = INST("ImageLabel") 
+	cursor.Name = "cursor" 
+	cursor.Parent = Uwu 
+	cursor.BackgroundTransparency = 1 
+	cursor.Size = UDIM2(0,64,0,64) 
+	cursor.Image = "rbxassetid://7543116323" 
+	cursor.ZIndex = 1000 
+	cursor.ImageColor3 = COL3RGB(238,26,33) 
 
-	local Players = game:GetService("Players")      
-	local LocalPlayer = Players.LocalPlayer      
-	local Mouse = LocalPlayer:GetMouse()      
+	local Players = game:GetService("Players") 
+	local LocalPlayer = Players.LocalPlayer 
+	local Mouse = LocalPlayer:GetMouse() 
 
-	game:GetService("RunService").RenderStepped:connect(function()      
-		cursor.Visible = Uwu.Enabled      
-		cursor.Position = UDIM2(0,Mouse.X-3,0,Mouse.Y+1)      
-	end)      
+	game:GetService("RunService").RenderStepped:connect(function() 
+		cursor.Visible = Uwu.Enabled 
+		cursor.Position = UDIM2(0,Mouse.X-32,0,Mouse.Y-28) 
+	end)
 
 	Menu.Name = "Menu"      
 	Menu.Parent = Uwu      
@@ -8081,50 +8081,12 @@ print("Credit to Lunarsense for the most AAs",Color3.new(0,1,0))
 print("Credit to Bloxity.tk for velocity graph",Color3.new(0,1,0))
 print("Credit to Rainy.solution for Ambient, Semi Hitsound, Time Changer",Color3.new(0,1,0))
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/wind777777/wm/main/wm"))()
-function dragify(Watermark)
-dragToggle = nil
-dragSpeed = .25 -- You can edit this.
-dragInput = nil
-dragStart = nil
-dragPos = nil
-
-function updateInput(input)
-Delta = input.Position - dragStart
-Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-game:GetService("TweenService"):Create(Watermark, TweenInfo.new(.25), {Position = Position}):Play()
-end
-
-Watermark.InputBegan:Connect(function(input)
-if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
-dragToggle = true
-dragStart = input.Position
-startPos = Watermark.Position
-input.Changed:Connect(function()
-if (input.UserInputState == Enum.UserInputState.End) then
-dragToggle = false
-end
-end)
-end
-end)
-
-Watermark.InputChanged:Connect(function(input)
-if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
-dragInput = input
-end
-end)
-
-game:GetService("UserInputService").InputChanged:Connect(function(input)
-if (input == dragInput and dragToggle) then
-updateInput(input)
-end
-end)
-end
+repeat wait() until game:IsLoaded() local genv = getgenv() local screen = Instance.new("ScreenGui") syn.protect_gui(screen) screen.Parent = game.CoreGui local bg = Instance.new("Frame",screen) bg.Size = UDim2.new(0,0,0,18) bg.BorderColor3 = Color3.new(0,0,0) local g = Instance.new("UIGradient",bg) g.Color = ColorSequence.new{ColorSequenceKeypoint.new(0,Color3.fromRGB(65,65,65)); ColorSequenceKeypoint.new(1,Color3.fromRGB(35,35,35));} g.Rotation = 90; local h = Instance.new("Frame",bg) h.Size = UDim2.new(1,0,0,1) h.BorderSizePixel = 1 h.BorderColor3 = Color3.new(0,0,0) local tl = Instance.new("TextLabel",bg) tl.Size = UDim2.new(.96,0,.92,0) tl.Position = UDim2.new(.02,0,.095,0) tl.BackgroundTransparency = 1 tl.TextStrokeTransparency = 0 tl.TextColor3 = Color3.new(1,1,1) tl.TextStrokeColor3 = Color3.new(0,0,0) tl.TextSize = 8 genv.watermark = {text = {" avidity.pub ";"[Version: PUBLIC]";game.Players.LocalPlayer.Name.." | Build: 1.0";"00:00:00";};color = Color3.fromRGB(249, 9, 17), separator = "  |  "} game:GetService("RunService").Heartbeat:Connect(function() watermark.text[4] = os.date("%X",os.time()) tl.Text = table.concat(watermark.text,watermark.separator) local x = game:GetService("TextService"):GetTextSize(tl.Text,tl.TextSize,tl.Font,Vector2.new(0,0)).X local screensize = workspace.CurrentCamera.ViewportSize bg.Size = UDim2.new(0,x+12,0,20) bg.Position = UDim2.new(0.017, 0, 0.023, 0) h.BackgroundColor3 = watermark.color end)
 
 ChatScript.moveOldMessages()
 
-ChatScript.createNewMessage("Avidity","Build: Private",MainUIColor,Color3.new(1,1,1),0.01,nil)
+ChatScript.createNewMessage("Avidity","Build: Public",MainUIColor,Color3.new(243,3,11),0.01,nil)
 
 ChatScript.moveOldMessages()
 
-ChatScript.createNewMessage("Avidity","Version: 0.1",MainUIColor,Color3.new(1,1,1),0.01,nil)
+ChatScript.createNewMessage("Avidity","Version: 1.0",MainUIColor,Color3.new(243,3,11),0.01,nil)
