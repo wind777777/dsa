@@ -4886,7 +4886,12 @@ aimbot:Element("Jumbobox", "resolver", {options = {"pitch", "roll","animation"}}
 aimbot:Element("Toggle", "delay shot")      
 aimbot:Element("Toggle", "force hit")      
 aimbot:Element("Dropdown", "prediction", {options = {"off", "cframe", "velocity"}}) 
-aimbot:Element("Toggle", "prediction")      
+aimbot:Element("Toggle", "prediction")
+aimbot:Element("Toggle", "backtrack")  
+    if values.rage.aimbot["backtrack"].Toggle then 
+            args[1] = RageTarget 
+            args[2] = RageTarget.Position 
+        end            
 aimbot:Element("Toggle", "teammates")      
 aimbot:Element("Toggle", "auto baim")      
 aimbot:Element("Toggle", "knifebot")      
